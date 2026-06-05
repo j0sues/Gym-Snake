@@ -52,6 +52,9 @@ class Controller():
         self.grid.erase(snake.body[0])
         # Find and set next head position conditioned on direction
         snake.action(direction)
+        snake.head[0] = snake.head[0] % self.grid.grid_size[0]
+        snake.head[1] = snake.head[1] % self.grid.grid_size[1]
+        snake.last_direction = direction
 
     def move_result(self, direction, snake_idx=0):
         """

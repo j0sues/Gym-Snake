@@ -62,7 +62,11 @@ class Grid():
         coord2 - x,y integer coordinates as a tuple, list, or ndarray
         color - [R,G,B] values as a tuple, list, or ndarray
         """
-
+        wrap_x = (np.abs(coord1[0]-coord2[0]) == self.grid_size[0] - 1)
+        wrap_y = (np.abs(coord1[1]-coord2[1]) == self.grid_size[1] - 1)
+        
+        if wrap_x or wrap_y:
+            return
         # Check for adjacency
         # Next to one another:
         adjacency1 = (np.abs(coord1[0]-coord2[0]) == 1 and np.abs(coord1[1]-coord2[1]) == 0)
