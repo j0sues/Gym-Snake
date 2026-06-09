@@ -11,7 +11,7 @@ class Controller():
 
         assert n_snakes < grid_size[0]//3
         assert n_snakes < 25
-        assert snake_size < grid_size[1]//2
+        #assert snake_size < grid_size[1]//2
         assert unit_gap >= 0 and unit_gap < unit_size
 
         self.snakes_remaining = n_snakes
